@@ -16,10 +16,10 @@ namespace ImageSearch.Services
     public class CognitiveServicesKeys
     {
         //Setup a Emotion API key for Cognitive Services at: https://www.microsoft.com/cognitive-services/
-        public const string Emotion = "";
+        public const string Emotion = "__ENTER YOUR COGNITIVE SERVICE KEY__";
 
 	//Setup a Bing Search API key from: http://www.microsoft.com/cognitive-services
-	public const string BingSearch = "";
+	public const string BingSearch = "__ENTER YOUR BING API SEARCH KEY__";
 
 	} 
 }
