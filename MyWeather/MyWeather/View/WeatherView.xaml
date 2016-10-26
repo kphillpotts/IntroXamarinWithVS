@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyWeather.View.WeatherView"
+             xmlns:local="clr-namespace:MyWeather.View" 
+             Title="MyWeather">
+    <Grid>
+      <Image x:Name="Background" Aspect="AspectFill" Source="{Binding BackgroundImageSource}"/>
+      <BoxView Color="#30000000"/>
+      <Grid Padding="10" >
+        <Grid.RowDefinitions>
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="auto" />
+          <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Entry Text="{Binding Location}" TextColor="White" FontSize="Medium" Grid.Row="0"/>
+
+        <Button Text="Get Weather" Command="{Binding GetWeatherCommand}" TextColor="White" FontSize="Medium"  BorderColor="White" Grid.Row="1"/>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="2">
+          <Label Text="Use Imperial?" VerticalTextAlignment="Center" TextColor="White" FontSize="Medium" />
+          <Switch IsToggled="{Binding IsImperial}" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="3">
+          <Label Text="Use GPS?" VerticalTextAlignment="Center" TextColor="White" FontSize="Medium" FontAttributes="None" />
+          <Switch IsToggled="{Binding UseGPS}"/>
+        </StackLayout>
+
+        <Grid Grid.Row="4" VerticalOptions="Center" IsVisible="{Binding IsDataAvailable}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <local:HourlyView x:Name="hour0" Grid.Column="0" BindingContext="{Binding Forecast.Items[0]}" />
+          <local:HourlyView x:Name="hour1" Grid.Column="1" BindingContext="{Binding Forecast.Items[1]}" />
+          <local:HourlyView x:Name="hour2" Grid.Column="2" BindingContext="{Binding Forecast.Items[2]}" />
+          <local:HourlyView x:Name="hour3" Grid.Column="3" BindingContext="{Binding Forecast.Items[3]}" />
+        </Grid>
+
+        <Label Text="{Binding Temp}" FontSize="96" TextColor="White" Grid.Row="5" />
+        <Label Text="{Binding Condition}" FontSize="Medium" TextColor="White" Grid.Row="6"/>
+
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+      
+      </Grid>
+    </Grid>
+</ContentPage>

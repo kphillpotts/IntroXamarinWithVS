@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MyWeather.View.HourlyView">
+  <Grid>
+    <BoxView Color="#22000000" IsVisible="{Binding IsDataAvailable}" />
+    <StackLayout>
+      <Label Text="{Binding DisplayTime}" HorizontalTextAlignment="Center" TextColor="White" FontSize="Medium" />
+      <Image HeightRequest="75"
+             WidthRequest="75"
+             Source="{Binding DisplayIcon}" />
+      <Label Text="{Binding DisplayTemp}" HorizontalTextAlignment="Center" TextColor="White" FontSize="Medium" />
+    </StackLayout>
+  </Grid>
+</ContentView>
