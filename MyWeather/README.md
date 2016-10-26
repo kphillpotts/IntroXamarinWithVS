@@ -1,3 +1,6 @@
+Based on the Xamarin Developer Day sample provided by James Montemagno - https://github.com/xamarin/dev-days-labs  
+All credits go to James!
+
 MyWeather.Forms
 ===================
 
