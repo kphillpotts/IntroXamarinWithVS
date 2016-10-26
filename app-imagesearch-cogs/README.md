@@ -1,3 +1,6 @@
+Based on the Xamarin Developer Day sample provided by James Montemagno - https://github.com/xamarin/dev-days-labs
+All credits go to James!
+
 ## Image Search 
 
 Demo application built with [Xamarin](http://xamarin.com) to do a Bing and Google Image Search and then use Microsoft Cognitive Services to do emotion face detection on the results or on a photo you take from your device!
